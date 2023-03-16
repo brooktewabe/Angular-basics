@@ -1,0 +1,113 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<p>course works!--from course component</p>
+<img class="imc" src="../favicon.ico">
+<h2>This is {{name}}</h2>
+
+<input type="text" [disabled]="isDis">
+<div class="td ti">Red</div>
+<h3 style="color: orange;">Orange</h3>
+<button class="btn btn-success" (click)="greetMe()">Show</button>
+<h2 *ngIf="dispBlock;else hideBlock">{{greeting}} </h2>
+<ng-template #hideBlock>
+    <h2>Block Hidden</h2>
+</ng-template>
+<button class="btn btn-danger" (click)="hide()">Hide</button><br>
+
+<!-- <input #n1 type="number">
+<input #n2 type="number"><br>
+sum:<input #n2 type="number" disabled value="{{val}}"> 
+<button (click)="add(n1.value,n2.value)">ADD</button> -->
+<div class="form-group col-xs-3">
+    <label for="no1" class="control-label">No1</label>
+    <input type="number" [(ngModel)]="no1" class="form-control" [ngClass]="{'is-invalid': !no1, '': no1 }" >
+    <div class="invalid-feedback">No1 is required</div>
+</div>
+<select [(ngModel)]="oper" id="">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+</select>
+<div class="form-group col-xs-3">
+    <label for="no2" class="control-label">No2</label>
+    <input type="number" [(ngModel)]="no2" class="form-control"
+           [ngClass]="{'is-invalid': !no2, '': no2 }" required>
+    <div class="invalid-feedback">No2 is required</div>
+</div><br>
+<button class="btn btn-primary mt-0" (click)="add()">Calculate</button><br>
+Ans:<input type="number" disabled value="{{val}}">
+<table>
+    <tr>
+        <td>Name:</td>
+        <td><input type="text" [(ngModel)]="name2"></td><br>
+        <td><input type="text" value="{{name2}}" disabled></td>
+        <button (click)="urNameIs()" class="btn btn-primary">Name?</button>
+    </tr>
+    <tr>
+        <td>Last Name:</td>
+        <td><input type="text" [(ngModel)]="lname"></td><br>
+        <td><input type="text" value="{{lname}}" disabled></td>
+    </tr>
+    <tr>
+        <td>Date:</td>
+        <td><input type="date" [(ngModel)]="dt"></td><br>
+        <td><input type="date" value="{{dt}}" disabled></td>
+    </tr>
+    <tr>
+        <td>Upload Image:</td>
+        <td><input type="file" (change)="selectFile($event)" accept="image/*"></td>
+    </tr>
+    <tr>
+        <td colspan="2"><img [src]="imageName" *ngIf="imageName" width="300" height="200"></td>
+    </tr>
+</table>
+<div class="arr" style="font-weight:bold" *ngFor="let c of colors;index as i">
+    {{i+1}}:{{c}}
+
+</div>
+<h4>{{inputFromParent}}</h4>
+<!-- pipeline -->
+<p>Pipeline data</p>
+<h6>{{ty| json}}</h6>
+<h6>{{newStr|uppercase}}</h6>
+<h6>{{myCash|currency:'Br ':'code'}}</h6>
+<h6>{{date|date:'short'}}</h6>
+
+
+<h2>Employee List of {{count}}</h2>
+<ul *ngFor="let emp of employees">
+    <li>{{emp.id}}.{{emp.name}}</li>
+</ul>
+
+<h2>Employee List of {{count}} HTTP</h2>
+<p style="color: red;">{{errorMessage}}</p>
+<ul *ngFor="let emp of employeesHttp">
+    <li>{{emp.id}}.{{emp.name}}</li>
+</ul>
+
+<section>
+    <div class="example-label">Flat</div>
+    <div class="example-button-row">
+        <button mat-flat-button>Basic</button>
+        <button mat-flat-button color="primary">Primary</button>
+        <button mat-flat-button color="accent">Accent</button>
+        <button mat-flat-button color="warn">Warn</button>
+        <button mat-flat-button disabled>Disabled</button>
+        <a mat-flat-button href="https://www.google.com/" target="_blank">Link</a>
+    </div>
+    <mat-slide-toggle>Slide me!</mat-slide-toggle>
+</section>
+<!-- /array -->
+<ul *ngFor='let na of newArr'>
+    <li>{{na}}</li>
+</ul>
+<!-- array of obj -->
+<ul *ngFor="let no of newObj">
+    <li>{{no.name0}}{{no.name2}}{{no.name3}}</li>
+</ul>
+<!-- obj -->
+<ul *ngFor="let no of newObj2|keyvalue">
+    <!-- <li>{{no.key}}:{{no.value}}</li> -->
+    <li>{{no.value}}</li>
+</ul>

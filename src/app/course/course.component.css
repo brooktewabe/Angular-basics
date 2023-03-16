@@ -1,0 +1,28 @@
+p{
+    color: blue;
+}
+.imc:hover{
+    display: none;
+}
+.td{
+    color: red;
+}
+.ti{
+    font-style: italic;
+}
+
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}
+.arr{
+    text-align: center;
+}
+ul{
+    list-style: none;
+}
+h6{
+    font-size: medium;
+}

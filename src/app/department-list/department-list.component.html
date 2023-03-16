@@ -1,0 +1,6 @@
+<h3>Department list</h3>
+<ul class="list-group">
+    <li class="list-group-item btn btn-success" (click)="onSelect(department)" *ngFor="let department of departments">
+        {{department.id}}{{department.name}}
+    </li>
+</ul> 

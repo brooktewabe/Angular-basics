@@ -1,0 +1,7 @@
+span{
+    font-weight: bold;
+    font-size: larger;
+}
+nav a.active{
+    color: coral;
+}

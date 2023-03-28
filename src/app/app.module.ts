@@ -20,6 +20,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { LayoutModule } from '@angular/cdk/layout';
 import { EmpapireqService } from './empapireq.service';
+import { EmployeeApiComponent } from './employee-api/employee-api.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,7 @@ import { EmpapireqService } from './empapireq.service';
     DepartmentDetailComponent,
     DeptListOverviewComponent,
     AngMaterialDashComponent,
+    EmployeeApiComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +46,7 @@ import { EmpapireqService } from './empapireq.service';
     MatMenuModule,
     MatIconModule,
     LayoutModule,
+    ToastrModule.forRoot()
   ],
   providers: [EmployeeService,EmpapireqService],
   bootstrap: [AppComponent]

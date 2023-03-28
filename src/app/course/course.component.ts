@@ -15,7 +15,7 @@ export interface IEmployeeApi {
   Description:string;
   Description2:string;
   Description3:string;  
-  isComplete:string;
+  isComplete:boolean;
 }
 
 export interface Tile {
@@ -36,10 +36,11 @@ export interface newNames {
 })
 export class CourseComponent implements OnInit {
   name = 'Brook';
+  cn:string='';
   employees = [] as any;
   employeesHttp = [] as any;
   employeesHttpApi = [] as any;
-  public greeting: string = '';
+  greeting: string = ''; 
   errorMessage: string = '';
   errorMessage2: string = '';
   isDis = false;
@@ -67,7 +68,7 @@ export class CourseComponent implements OnInit {
   newStr = 'BRO';
   myCash = 0.5;
   date = new Date();
-  constructor(    private _employeeService: EmployeeService,private _employeeServiceHttp: EmpoyeehttpService,private _empapireqService: EmpapireqService) {}
+  constructor(private _employeeService: EmployeeService,private _employeeServiceHttp: EmpoyeehttpService,private _empapireqService: EmpapireqService) {}
 
   ngOnInit() {
     this.employees = this._employeeService.getEmployees();
@@ -94,8 +95,6 @@ export class CourseComponent implements OnInit {
     });
   }
   
-
-    
 
   greetMe() {
     this.greeting = 'User is ' + this.name;

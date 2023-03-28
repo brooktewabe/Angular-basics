@@ -26,3 +26,6 @@ ul{
 h6{
     font-size: medium;
 }
+input.invalid {
+    border-color: red;
+  }

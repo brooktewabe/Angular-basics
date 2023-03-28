@@ -2,7 +2,8 @@
 <img class="imc" src="../favicon.ico">
 <h2>This is {{name}}</h2>
 
-<input type="text" [disabled]="isDis">
+<input type="text" [disabled]="isDis" [(ngModel)]="cn" required #cnInput="ngModel" [class.invalid]="cnInput.invalid && cnInput.touched">
+
 <div class="td ti">Red</div>
 <h3 style="color: orange;">Orange</h3>
 <button class="btn btn-success" (click)="greetMe()">Show</button>

@@ -5,6 +5,7 @@ import { CourseComponent } from './course/course.component';
 import { DepartmentDetailComponent } from './department-detail/department-detail.component';
 import { DepartmentListComponent } from './department-list/department-list.component';
 import { DeptListOverviewComponent } from './dept-list-overview/dept-list-overview.component';
+import { EmployeeApiComponent } from './employee-api/employee-api.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
     ]
   },
   { path: 'course', component: CourseComponent },
+  {path:'api',component:EmployeeApiComponent},
   { path: 'component', component: AngMaterialDashComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
@@ -25,4 +27,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [DepartmentListComponent, CourseComponent, PageNotFoundComponent, DepartmentDetailComponent, DeptListOverviewComponent]
+export const routingComponents = [DepartmentListComponent, CourseComponent, PageNotFoundComponent, DepartmentDetailComponent, DeptListOverviewComponent,EmployeeApiComponent]

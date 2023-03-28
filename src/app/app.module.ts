@@ -19,6 +19,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { LayoutModule } from '@angular/cdk/layout';
+import { EmpapireqService } from './empapireq.service';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,7 @@ import { LayoutModule } from '@angular/cdk/layout';
     MatIconModule,
     LayoutModule,
   ],
-  providers: [EmployeeService],
+  providers: [EmployeeService,EmpapireqService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

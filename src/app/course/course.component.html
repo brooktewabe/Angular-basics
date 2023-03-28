@@ -1,6 +1,4 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-
-<p>course works!--from course component</p>
 <img class="imc" src="../favicon.ico">
 <h2>This is {{name}}</h2>
 
@@ -80,10 +78,16 @@ Ans:<input type="number" disabled value="{{val}}">
     <li>{{emp.id}}.{{emp.name}}</li>
 </ul>
 
-<h2>Employee List of {{count}} HTTP</h2>
+<h2>Employee List of {{count2}} HTTP</h2>
 <p style="color: red;">{{errorMessage}}</p>
 <ul *ngFor="let emp of employeesHttp">
     <li>{{emp.id}}.{{emp.name}}</li>
+</ul>
+
+<h2>Employee List of {{count3}} API</h2>
+<p style="color: red;">{{errorMessage2}}</p>
+<ul *ngFor="let empl of employeesHttpApi">
+    <li>{{empl.id}}.{{empl.name}} {{empl.description}}</li>
 </ul>
 
 <section>

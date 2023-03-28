@@ -8,15 +8,16 @@ import { DeptListOverviewComponent } from './dept-list-overview/dept-list-overvi
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  {path:'',redirectTo:'/course',pathMatch:'full'},
-  {path:'department',component:DepartmentListComponent},
-  {path:'department/:id',component:DepartmentDetailComponent,
-  children:[
-    {path:'overview',component:DeptListOverviewComponent}
-  ]},
-  {path:'course',component:CourseComponent},
-  {path:'component',component:AngMaterialDashComponent},
-  {path:'**',component:PageNotFoundComponent}
+  { path: '', redirectTo: '/course', pathMatch: 'full' },
+  { path: 'department', component: DepartmentListComponent },
+  { path: 'department/:id', component: DepartmentDetailComponent,
+    children: [
+      { path: 'overview', component: DeptListOverviewComponent }
+    ]
+  },
+  { path: 'course', component: CourseComponent },
+  { path: 'component', component: AngMaterialDashComponent },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
@@ -24,4 +25,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents=[DepartmentListComponent,CourseComponent,PageNotFoundComponent,DepartmentDetailComponent,DeptListOverviewComponent]
+export const routingComponents = [DepartmentListComponent, CourseComponent, PageNotFoundComponent, DepartmentDetailComponent, DeptListOverviewComponent]

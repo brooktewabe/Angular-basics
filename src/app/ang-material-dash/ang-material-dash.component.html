@@ -1,7 +1,8 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <div class="grid-container">
   <h1 class="mat-h1">Dashboard</h1>
   <mat-grid-list cols="2" rowHeight="350px">
-    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
+    <mat-grid-tile *ngFor="let card of cards | async ;index as i"  [colspan]="card.cols" [rowspan]="card.rows">
       <mat-card class="dashboard-card">
         <mat-card-header>
           <mat-card-title>
@@ -15,8 +16,28 @@
             </mat-menu>
           </mat-card-title>
         </mat-card-header>
-        <mat-card-content class="dashboard-card-content">
-          <div>Card Content Here</div>
+        <mat-card-content class="dashboard-card-content" >
+          <div>{{card.content}}</div>
+          <p>Content for card {{i+1}}</p>
+          <a *ngIf="i == 0" href="https://example.com">Link for Card 1</a><br>
+          <ng-container *ngIf="i == 0">
+            <a href="https://example.com">Link 1</a><br>
+          </ng-container>
+          <ng-container *ngIf="i == 2" >
+            <div class="col-xs-5">
+              <span>
+                <label for="aNewName"> Add Name:</label>
+                <input type="text" name="aNewName" [(ngModel)]="aNewName" class="form-control" [ngClass]="{'is-invalid': !aNewName, '': aNewName }" >
+              </span>
+            <p style="color: red;">{{errorMessage}}</p>
+            <ul style="display: flex;list-style: none;" *ngFor="let emp of employeesHttp">
+                <li>{{emp.id}}.{{emp.name}}</li>
+            </ul>
+            <ul style="display: flex;list-style: none;" >
+              <li>4.{{aNewName}}</li>
+            </ul>
+            </div>
+          </ng-container>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>

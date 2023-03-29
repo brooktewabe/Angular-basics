@@ -1,12 +1,12 @@
 <div class="container">
-    <h1>Employee List({{count}})</h1>
+    <h1>Employee Registration</h1>
     <div class="row">
       <div class="col-md-6">
         <form (ngSubmit)="addEmployee()" #employeeForm="ngForm">
-          <div class="form-group">
+          <!-- <div class="form-group">
             <label for="name">ID:</label>
             <input type="number" class="form-control" id="id" name="id" [(ngModel)]="newEmployee.Id" required>
-          </div>         
+          </div>          -->
            <div class="form-group">
             <label for="name">Name:</label>
             <input type="text" class="form-control" id="name" name="name" [(ngModel)]="newEmployee.Name" required>
@@ -36,7 +36,7 @@
     </div>
     <br>
 <div class="container">
-  <h2>Employee List</h2>
+  <h2>Employee List({{count}})</h2>
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -66,6 +66,5 @@
     </tbody>
   </table>
 </div>
-
-  </div>
+</div>
   

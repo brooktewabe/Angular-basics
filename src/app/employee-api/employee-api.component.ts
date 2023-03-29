@@ -99,6 +99,7 @@ export class EmployeeApiComponent {
           }
         });
     }
+    location.reload();
   }
   resetForm(): void {
     this.newEmployee = {

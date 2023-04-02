@@ -2,7 +2,7 @@
 <img class="imc" src="../favicon.ico">
 <h2>This is {{name}}</h2>
 
-<input class="form-input border-2 bg-gray-200" type="text" [disabled]="isDis" [(ngModel)]="cn" required #cnInput="ngModel" [class.invalid]="cnInput.invalid && cnInput.touched">
+Input:<input class="form-input border-2 bg-gray-200" type="text" [disabled]="isDis" [(ngModel)]="cn" required #cnInput="ngModel" [class.invalid]="cnInput.invalid && cnInput.touched">
 
 <div class="td ti">Red</div>
 <h3 style="color: orange;">Orange</h3>
@@ -12,46 +12,12 @@
     <h2>Block Hidden</h2>
 </ng-template>
 <button class="btn btn-danger" (click)="hide()">Hide</button><br>
-
-<!-- <input #n1 type="number">
-<input #n2 type="number"><br>
-sum:<input #n2 type="number" disabled value="{{val}}"> 
-<button (click)="add(n1.value,n2.value)">ADD</button> -->
-<div class="form-group col-xs-3">
-    <label for="no1" class="control-label">No1</label>
-    <input type="number" [(ngModel)]="no1" class="form-control" [ngClass]="{'is-invalid': !no1, '': no1 }" >
-    <div class="invalid-feedback">No1 is required</div>
-</div>
-<select [(ngModel)]="oper" id="">
-    <option value="+">+</option>
-    <option value="-">-</option>
-    <option value="*">*</option>
-    <option value="/">/</option>
-</select>
-<div class="form-group col-xs-3">
-    <label for="no2" class="control-label">No2</label>
-    <input type="number" [(ngModel)]="no2" class="form-control"
-           [ngClass]="{'is-invalid': !no2, '': no2 }" required>
-    <div class="invalid-feedback">No2 is required</div>
-</div><br>
-<button class="btn btn-primary mt-0" (click)="add()">Calculate</button><br>
-Ans:<input type="number"  class="form-input border-2 bg-gray-200" disabled value="{{val}}">
 <table>
     <tr>
         <td>Name:</td>
         <td><input type="text"  class="form-input border-2 bg-gray-200" [(ngModel)]="name2"></td><br>
         <td><input type="text"  class="form-input border-2 bg-gray-200" value="{{name2}}" disabled></td>
         <button (click)="urNameIs()" class="btn btn-primary">Name?</button>
-    </tr>
-    <tr>
-        <td>Last Name:</td>
-        <td><input type="text"  class="form-input border-2 bg-gray-200" [(ngModel)]="lname"></td><br>
-        <td><input type="text"  class="form-input border-2 bg-gray-200" value="{{lname}}" disabled></td>
-    </tr>
-    <tr>
-        <td>Date:</td>
-        <td><input  class="form-input border-2 bg-gray-200" type="date" [(ngModel)]="dt"></td><br>
-        <td><input  class="form-input border-2 bg-gray-200" type="date" value="{{dt}}" disabled></td>
     </tr>
     <tr>
         <td>Upload Image:</td>
@@ -61,9 +27,43 @@ Ans:<input type="number"  class="form-input border-2 bg-gray-200" disabled value
         <td colspan="2"><img [src]="imageName" *ngIf="imageName" width="300" height="200"></td>
     </tr>
 </table>
-<div class="arr" style="font-weight:bold" *ngFor="let c of colors;index as i">
-    {{i+1}}:{{c}}
+<!-- <input #n1 type="number">
+<input #n2 type="number"><br>
+sum:<input #n2 type="number" disabled value="{{val}}"> 
+<button (click)="add(n1.value,n2.value)">ADD</button> -->
 
+<div class="flex flex-wrap">
+    <div class="w-full md:w-1/5 px-3 mb-6 md:mb-0">
+      <label for="no1" class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">No1</label>
+      <input type="number" [(ngModel)]="no1" class="form-control" [ngClass]="{'is-invalid': !no1, '': no1 }" required>
+      <p class="text-red-500 text-xs italic">{{!no1 ? 'No1 is required' : ''}}</p>
+    </div>
+    <div class="w-full md:w-1/5 justify-center flex">
+      <label for="oper" class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Operator</label>
+      <div class="relative">
+        <select class="block appearance-none w-15 bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" [(ngModel)]="oper" id="oper">
+          <option value="">Choose</option>
+          <option value="+">+</option>
+          <option value="-">-</option>
+          <option value="*">*</option>
+          <option value="/">/</option>
+        </select>
+        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+        </div>
+      </div>
+    </div>
+    <div class="w-full md:w-1/5">
+      <label for="no2" class="block uppercase tracking-wide text-gray-700 text-xs font-bold">No2</label>
+      <input type="number" [(ngModel)]="no2" class="form-control" [ngClass]="{'is-invalid': !no2, '': no2 }" required>
+      <p class="text-red-500 text-xs italic">{{!no2 ? 'No2 is required' : ''}}</p>
+    </div>
+  </div>
+  
+<button class="btn btn-primary mt-0" (click)="add()">Calculate</button><br><br>
+Ans:<input type="number"  class="form-input border-2 bg-gray-200" disabled value="{{val}}">
+
+<div class="ml-10" style="font-weight:bold" *ngFor="let c of colors;index as i">
+    {{i+1}}:{{c}}
 </div>
 <h4>{{inputFromParent}}</h4>
 <!-- pipeline -->

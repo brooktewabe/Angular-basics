@@ -2,7 +2,7 @@
 <img class="imc" src="../favicon.ico">
 <h2>This is {{name}}</h2>
 
-<input type="text" [disabled]="isDis" [(ngModel)]="cn" required #cnInput="ngModel" [class.invalid]="cnInput.invalid && cnInput.touched">
+<input class="form-input border-2 bg-gray-200" type="text" [disabled]="isDis" [(ngModel)]="cn" required #cnInput="ngModel" [class.invalid]="cnInput.invalid && cnInput.touched">
 
 <div class="td ti">Red</div>
 <h3 style="color: orange;">Orange</h3>
@@ -35,23 +35,23 @@ sum:<input #n2 type="number" disabled value="{{val}}">
     <div class="invalid-feedback">No2 is required</div>
 </div><br>
 <button class="btn btn-primary mt-0" (click)="add()">Calculate</button><br>
-Ans:<input type="number" disabled value="{{val}}">
+Ans:<input type="number"  class="form-input border-2 bg-gray-200" disabled value="{{val}}">
 <table>
     <tr>
         <td>Name:</td>
-        <td><input type="text" [(ngModel)]="name2"></td><br>
-        <td><input type="text" value="{{name2}}" disabled></td>
+        <td><input type="text"  class="form-input border-2 bg-gray-200" [(ngModel)]="name2"></td><br>
+        <td><input type="text"  class="form-input border-2 bg-gray-200" value="{{name2}}" disabled></td>
         <button (click)="urNameIs()" class="btn btn-primary">Name?</button>
     </tr>
     <tr>
         <td>Last Name:</td>
-        <td><input type="text" [(ngModel)]="lname"></td><br>
-        <td><input type="text" value="{{lname}}" disabled></td>
+        <td><input type="text"  class="form-input border-2 bg-gray-200" [(ngModel)]="lname"></td><br>
+        <td><input type="text"  class="form-input border-2 bg-gray-200" value="{{lname}}" disabled></td>
     </tr>
     <tr>
         <td>Date:</td>
-        <td><input type="date" [(ngModel)]="dt"></td><br>
-        <td><input type="date" value="{{dt}}" disabled></td>
+        <td><input  class="form-input border-2 bg-gray-200" type="date" [(ngModel)]="dt"></td><br>
+        <td><input  class="form-input border-2 bg-gray-200" type="date" value="{{dt}}" disabled></td>
     </tr>
     <tr>
         <td>Upload Image:</td>

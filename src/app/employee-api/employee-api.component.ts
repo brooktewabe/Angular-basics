@@ -60,6 +60,12 @@ export class EmployeeApiComponent {
         }
       });
   }
+  editEmployee(employee: IEmployeeApi) {
+  this.selectedEmployee = { ...employee };
+  this.employeeId = employee.Id;
+  this.newEmployee = { ...this.selectedEmployee };
+}
+
   
   updateEmployee(): void {
     if (this.selectedEmployee) {

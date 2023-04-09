@@ -12,7 +12,7 @@ export class EmpapireqService {
     throw new Error('Method not implemented.');
   }
 
-  private _url: string = "https://localhost:5001/api/TodoItems";
+  private _url: string = "https://localhost:7126/api/ToDoItem";
 
   constructor(private http: HttpClient) { }
 

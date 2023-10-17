@@ -1,3 +1,9 @@
+## This is angular basics app, it includes concepts like angular material, routing, services and is connected to a .Net backend for simple CRUD operations
+
+
+
+
+
 # HelloWorld ---------my first angular project
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.

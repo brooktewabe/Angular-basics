@@ -9,7 +9,7 @@ import { EmployeeApiComponent } from './employee-api/employee-api.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/course', pathMatch: 'full' },
+  { path: '', redirectTo: '/department', pathMatch: 'full' },
   { path: 'department', component: DepartmentListComponent },
   { path: 'department/:id', component: DepartmentDetailComponent,
     children: [

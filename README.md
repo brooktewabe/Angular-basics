@@ -1,4 +1,4 @@
-## This is angular basics app, it includes concepts like angular material, routing, services and is connected to a .Net backend for simple CRUD operations
+## This is my first ever angular basics app, it includes concepts like angular material, routing, services and is connected to a .Net backend for simple CRUD operations
 
 
 
